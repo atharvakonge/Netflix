@@ -1,16 +1,24 @@
-import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
+import ArrowBackIosOutlinedIcon from "@mui/icons-material/ArrowBackIosOutlined";
+import { Link, useLocation } from "react-router-dom";
 import "./watch.scss";
 
 export default function Watch() {
+  const location = useLocation();
+  const movie = location.state.movie;
+
   return (
     <div className="watch">
       <div className="back">
-        <ArrowBackIosOutlinedIcon />
-        Home
+        <Link to="/" className="link">
+          <ArrowBackIosOutlinedIcon />
+          Home
+        </Link>
       </div>
-      <video controls className='video'>
-        <source src="https://cdn.pixabay.com/vimeo/891301369/countdown-191655.mp4?width=1280&hash=2e7ac212ff2a6d98dcee503c50ba0f3f660c52d5" type="video/mp4"/>
-        </video>
+      {/* <video className="video" autoPlay progress controls src={movie.video} /> */}
+      <video className="video" autoPlay controls>
+        <source src={movie.video} type="video/mp4" />
+        Your browser does not support HTML video.
+      </video>
     </div>
   );
 }

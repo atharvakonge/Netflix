@@ -1,19 +1,33 @@
-import { useRef } from "react";
-import { useState } from "react";
+import axios from "axios";
+import { useState, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.scss";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
   const emailRef = useRef();
   const passwordRef = useRef();
+  const usernameRef = useRef();
 
   const handleStart = () => {
     setEmail(emailRef.current.value);
   };
-  const handleFinish = () => {
+
+  const handleFinish = async (e) => {
+    e.preventDefault();
     setPassword(passwordRef.current.value);
+    setUsername(usernameRef.current.value);
+
+    try {
+      await axios.post("auth/register", { email, username, password });
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="register">
@@ -24,7 +38,12 @@ export default function Register() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
             alt=""
           />
-          <button className="loginButton">Sign In</button>
+
+          <button className="loginButton">
+            <Link to="/login" className="link">
+              Sign In
+            </Link>
+          </button>
         </div>
       </div>
       <div className="container">
@@ -43,6 +62,7 @@ export default function Register() {
         ) : (
           <form className="input">
             <input type="password" placeholder="password" ref={passwordRef} />
+            <input type="username" placeholder="username" ref={usernameRef} />
             <button className="registerButton" onClick={handleFinish}>
               Start
             </button>
