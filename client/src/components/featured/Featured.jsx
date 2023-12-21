@@ -1,16 +1,35 @@
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import { useEffect } from "react";
+import { useState } from "react";
+import { AuthContext } from "../../authContext/AuthContext";
+import axios from "axios";
 
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import "./featured.scss";
+import { useContext } from "react";
 
-export default function Featured() {
+export default function Featured({ type, setGenre }) {
+  const [content, setContent] = useState({});
 
-  const type = "movie";
-  const content = {
-    img: "https://assets-prd.ignimgs.com/2022/03/01/fistful-of-vengeance-1646116375050.jpg",
-    desc: "Random Description",
-    imgTitle: "https://occ-0-621-616.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABViwbdlePaL4va7vjF732RaMw2wusokg3oFwMV95unzPJMuw9tUoVPK98whFHKneUNBFr7Mokq7-MncPZ4mXDI102VLYry5FaquB1_0X2Q4n2razs0WMXptJS9gZTZKaE6pnNVzC4aKidCYMWjl9PBzS2zquA3AVIUkp8kUA5O2VGyAVK5wm5Q.png?r=0b1"
-  }
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    const getRandomMovie = async () => {
+      try {
+        const response = await axios.get(`/movies/random?type=${type}`, {
+          headers: {
+            token: `Bearer ${user.access_token}`,
+          },
+        });
+
+        setContent(response.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getRandomMovie();
+  }, [type]);
 
   return (
     <div className="featured">
@@ -21,6 +40,7 @@ export default function Featured() {
             name="genre"
             id="genre"
             onChange={(e) => {
+              setGenre(e.target.value);
             }}
           >
             <option>Genre</option>
@@ -40,10 +60,10 @@ export default function Featured() {
           </select>
         </div>
       )}
-      <img src={content?.img} alt="" />
+      <img src={content.img} alt="" />
       <div className="info">
-        <img src={content.imgTitle} alt="" />
-        <span className="desc">{content?.desc}</span>
+        {/* <img src={content.imgTitle} alt="" /> */}
+        <span className="desc">{content.desc}</span>
         <div className="buttons">
           <button className="play">
             <PlayArrowIcon />
