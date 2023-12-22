@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./authContext/AuthContext";
+import Popular from "./pages/popular/Popular";
 
 const App = () => {
   const { user } = useContext(AuthContext);
@@ -18,6 +19,11 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
+        <Route
+          path="/popular"
+          element={user ? <Popular /> : <Navigate to="/login" />}
+        />
+
         <Route
           path="/register"
           element={!user ? <Register /> : <Navigate to="/" />}
