@@ -68,32 +68,42 @@
         margin: 0px 15px;
         cursor: pointer;
       }
+      
+      .rightmost{
+        display: flex;
+        flex-direction: row;
 
-      img {
-        width: 30px;
-        height: 30px;
-        border-radius: 5px;
-        object-fit: cover;
-        cursor: pointer;
-      }
-
-      .profile {
-        .options {
-          display: none;
-          background-color: var(--main-color);
+        img {
+          width: 30px;
+          height: 30px;
           border-radius: 5px;
-        }
-
-        span {
-          padding: 10px;
+          object-fit: cover;
           cursor: pointer;
         }
+        
+        .profile {
 
-        &:hover {
+          .icon{
+            margin-left: 0;
+          }
+
           .options {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
+            display: none;
+            background-color: var(--main-color);
+            border-radius: 5px;
+          }
+          
+          span {
+            padding: 10px;
+            cursor: pointer;
+          }
+          
+          &:hover {
+            .options {
+              display: flex;
+              flex-direction: column;
+              position: absolute;
+            }
           }
         }
       }

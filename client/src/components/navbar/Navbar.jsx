@@ -47,22 +47,24 @@ const Navbar = () => {
           <SearchIcon className="icon" />
           <span>KID</span>
           <NotificationsNoneIcon className="icon" />
-          <img
-            src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-          />
-          <div className="profile">
-            <ArrowDropDownIcon className="icon" />
-            <div className="options">
-              <span>Settings</span>
-              <span
-                onClick={() => {
-                  dispatch(logout());
-                  navigate("/login");
-                }}
-              >
-                Logout
-              </span>
+          <div className="rightmost">
+            <img
+              src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              alt=""
+            />
+            <div className="profile">
+              <ArrowDropDownIcon className="icon" />
+              <div className="options">
+                <span>Settings</span>
+                <span
+                  onClick={() => {
+                    dispatch(logout());
+                    navigate("/login");
+                  }}
+                >
+                  Logout
+                </span>
+              </div>
             </div>
           </div>
         </div>
