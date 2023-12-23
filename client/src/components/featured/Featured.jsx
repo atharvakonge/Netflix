@@ -8,7 +8,7 @@ import axios from "axios";
 import "./featured.scss";
 import { useContext } from "react";
 
-export default function Featured({ type, setGenre }) {
+export default function Featured({ type, genre, setGenre, genreList }) {
   const [content, setContent] = useState({});
 
   const { user } = useContext(AuthContext);
@@ -43,20 +43,16 @@ export default function Featured({ type, setGenre }) {
               setGenre(e.target.value);
             }}
           >
-            <option>Genre</option>
-            <option value="adventure">Adventure</option>
-            <option value="comedy">Comedy</option>
-            <option value="crime">Crime</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="historical">Historical</option>
-            <option value="horror">Horror</option>
-            <option value="romance">Romance</option>
-            <option value="sci-fi">Sci-fi</option>
-            <option value="thriller">Thriller</option>
-            <option value="western">Western</option>
-            <option value="animation">Animation</option>
-            <option value="drama">Drama</option>
-            <option value="documentary">Documentary</option>
+            <option value="">Genre</option>
+            {genreList.map((genreOption) => (
+              <option
+                key={genreOption?.id}
+                value={genreOption?.id}
+                selected={genreOption?.id == genre ? "selected" : ""}
+              >
+                {genreOption?.name}
+              </option>
+            ))}
           </select>
         </div>
       )}
