@@ -31,10 +31,39 @@ const Popular = ({ type }) => {
       }
     };
 
-    getData("Now Playing", `https://api.themoviedb.org/3/movie/now_playing`);
-    getData("Popular", `https://api.themoviedb.org/3/movie/popular`);
-    getData("Top Rated", `https://api.themoviedb.org/3/movie/top_rated`);
-    getData("Upcoming", `https://api.themoviedb.org/3/movie/upcoming`);
+    getData(
+      "Big Screen Thrills: Movies Now Playing",
+      `https://api.themoviedb.org/3/movie/now_playing`
+    );
+
+    getData(
+      "TV Premiere Extravaganza: Fresh Picks Today",
+      `https://api.themoviedb.org/3/tv/airing_today`
+    );
+
+    getData(
+      "Box Office Buzz: Most Popular Picks",
+      `https://api.themoviedb.org/3/movie/popular`
+    );
+
+    getData(
+      "TV Phenomenon: Most Popular Shows Revealed",
+      `https://api.themoviedb.org/3/tv/popular`
+    );
+    getData(
+      "Critical Acclaim: Top Rated Movie Magic",
+      `https://api.themoviedb.org/3/movie/top_rated`
+    );
+
+    getData(
+      "TV Excellence: Top Rated Shows Unleashed",
+      `https://api.themoviedb.org/3/tv/top_rated`
+    );
+
+    getData(
+      "Future Blockbusters: Upcoming Movie Madness",
+      `https://api.themoviedb.org/3/movie/upcoming`
+    );
   }, []);
 
   return (
