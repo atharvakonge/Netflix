@@ -28,6 +28,16 @@
     object-fit: cover;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Adjust the alpha for transparency */
+  }
+
   .info {
     width: 35%;
     position: absolute;
@@ -36,6 +46,11 @@
     color: white;
     display: flex;
     flex-direction: column;
+
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
 
     img {
       width: 400px;
