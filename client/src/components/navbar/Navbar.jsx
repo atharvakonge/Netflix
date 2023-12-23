@@ -45,7 +45,11 @@ const Navbar = () => {
               New and Popular
             </Link>
           </span>
-          <span className="link">My List</span>
+          <span className="link">
+            <Link to="/list" className="link main">
+              My List
+            </Link>
+          </span>
         </div>
         <div className="right">
           <SearchIcon className="icon" />

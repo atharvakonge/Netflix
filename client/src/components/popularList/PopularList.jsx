@@ -27,7 +27,7 @@ export default function PopularList({ list }) {
 
   return (
     <div className="list">
-      <span className="listTitle">{list.title}</span>
+      <span className="listTitle">{list?.title}</span>
       <div className="wrapper">
         <ArrowBackIosOutlinedIcon
           className="sliderArrow left"

@@ -12,6 +12,7 @@ import {
 import { useContext } from "react";
 import { AuthContext } from "./authContext/AuthContext";
 import Popular from "./pages/popular/Popular";
+import MyList from "./pages/myList/MyList";
 
 const App = () => {
   const { user } = useContext(AuthContext);
@@ -23,7 +24,10 @@ const App = () => {
           path="/popular"
           element={user ? <Popular /> : <Navigate to="/login" />}
         />
-
+        <Route
+          path="/list"
+          element={user ? <MyList /> : <Navigate to="/login" />}
+        />
         <Route
           path="/register"
           element={!user ? <Register /> : <Navigate to="/" />}
