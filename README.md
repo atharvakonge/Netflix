@@ -117,3 +117,37 @@ Welcome to the Netflix Clone application! This web application is built using Re
 5. **Open Application in Browser:**
 
    Open your browser and navigate to http://localhost:3000 to use the Netflix Clone application.
+
+## Contributing
+
+We welcome contributions to this project! If you would like to contribute, please follow these steps:
+
+1. **Fork the repository on GitHub.**
+
+2. **Create a new branch for your feature or bug fix:**
+
+```Bash
+git checkout -b feature-name
+```
+
+3. **Make your changes and commit them:**
+
+```Bash
+git commit -m 'Add a new feature'
+```
+
+4. **Push your changes to your fork:**
+
+```Bash
+git push origin feature-name
+```
+
+5. **Submit a pull request through GitHub.**
+
+## Issues
+
+If you encounter any issues or have suggestions for improvements, please open an issue on the GitHub repository.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more information.
