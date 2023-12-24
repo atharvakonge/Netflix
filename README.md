@@ -26,25 +26,48 @@ Welcome to the Netflix Clone application! This web application is built using Re
 - **Recommendations:** Get personalized recommendations based on your viewing history.
 - **Past Movies:** View a list of movies you've watched in the past.
 
-### Preview the application
+## Technology Used
 
-## Sign In Page
+- **Frontend:**
+  - React.js
+  - Context API for state management
+  - React Router DOM for routing
+  - Axios for making requests to the backend
+  - Sass for styling
+
+- **Backend:**
+  - Node.js
+  - Express
+  - MongoDB for database storage
+  - JSON Web Token (JWT) for authorization and session management
+  - Crypto-js for password and sensitive information encryption
+
+
+## Preview the application
+
+
+
+ **Sign In Page**
 
 <img width="1279" alt="Screenshot 2023-12-23 at 1 41 18 AM" src="https://github.com/atharvakonge/Netflix/assets/73238261/a5ccd928-7143-4f33-9509-18210e38cd60">
 
-## Log In Page
+
+
+ **Log In Page**
 
 <img width="1280" alt="Screenshot 2023-12-23 at 1 41 06 AM" src="https://github.com/atharvakonge/Netflix/assets/73238261/d58dfafa-d322-4b59-a2c1-0891f0bfb0d6">
 
-## Home Page
+
+
+**Home Page**
 
 <img width="1278" alt="Screenshot 2023-12-23 at 1 40 00 AM" src="https://github.com/atharvakonge/Netflix/assets/73238261/8a044879-89d8-4a06-9de1-d4f68ad48409">
 
-## Movie Lists
+
+
+**Movie Lists**
 
 <img width="1280" alt="Screenshot 2023-12-23 at 1 40 31 AM" src="https://github.com/atharvakonge/Netflix/assets/73238261/b7f2ad89-56e3-49d6-bb4d-812c0e603731">
-
-
 
 
 
